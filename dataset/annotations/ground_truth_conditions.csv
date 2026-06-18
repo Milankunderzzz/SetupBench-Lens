@@ -1,0 +1,2 @@
+condition_id,repository_id,execution_id,failure_code,phase,impact,evidence_level,evidence_location,minimal_fix,statically_observable,annotator_id,review_status,notes
+

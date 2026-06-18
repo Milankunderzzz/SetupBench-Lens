@@ -1,0 +1,26 @@
+{
+  "valid": true,
+  "releaseReady": false,
+  "strata": {
+    "node": 20,
+    "python": 20,
+    "docker": 10
+  },
+  "snapshotsChecked": 50,
+  "logsChecked": 2,
+  "databaseCounts": {
+    "repositories": 50,
+    "workflows": 50,
+    "setuplens_scans": 50,
+    "setuplens_findings": 1025,
+    "direct_executions": 2,
+    "ground_truth_conditions": 0,
+    "finding_reviews": 0,
+    "condition_matches": 0,
+    "human_trials": 0
+  },
+  "errors": [],
+  "warnings": [
+    "50 workflows still require human approval"
+  ]
+}
