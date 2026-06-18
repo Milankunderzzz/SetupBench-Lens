@@ -1,7 +1,8 @@
 # SetupBench-Lens
 
-SetupBench-Lens is a reproducible benchmark for evaluating preflight detection
-of repository setup failures in Node.js, Python, and Docker projects.
+I am building SetupBench-Lens as a reproducible benchmark for evaluating
+preflight detection of repository setup failures in Node.js, Python, and
+Docker projects.
 
 The benchmark pins 50 public repositories, executes a declared setup workflow
 inside disposable containers, stores redacted evidence in a local SQLite
@@ -13,8 +14,31 @@ ground truth.
 - Target sample: 50 repositories (20 Node.js, 20 Python, 10 Docker-required)
 - SetupLens candidate commit: `424a3307dffd6e1bfaf9b5caca68046f930c790c`
 - Taxonomy and annotation protocol: version 1.0
+- Completed machine scans: 50, containing 1,025 findings
+- Completed direct-execution probes: 2
+- Adjudicated ground-truth conditions: 0
+- Completed finding reviews: 0
 - Human comparison: pending blinded participant completion
 - Release gate: `v0.2.0` remains blocked until ground truth and human comparison are complete
+
+I keep the current machine-scan review workbook at
+`reports/LensBench_Machine_Scan_Review_2026-06-19.xlsx`. It separates the 50
+repository summaries, all raw findings, a machine-positive review queue, 10
+pilot repositories, and a deterministic negative-audit sample. Machine output
+is not treated as ground truth or as a final paper result.
+
+## Pilot before confirmatory evaluation
+
+I will fully review 10 pilot repositories before scaling the workflow. These
+pilot repositories are development data and will be excluded from confirmatory
+metrics. I will use them to refine the annotation examples, workflow approval
+criteria, and any future scoring changes.
+
+The other 40 repositories remain candidate holdout data until I complete the
+contamination audit for repositories previously used during SetupLens rule
+development. Reviewing only SetupLens warnings and failures would estimate
+precision but not recall, so the review plan also includes independent direct
+execution and a negative-result audit.
 
 ## Reproduce
 
@@ -56,4 +80,3 @@ Confidence intervals are bootstrapped by repository.
 3. Every direct command records image digest, timeout, exit code, and redacted log hash.
 4. SetupLens rule changes after annotation begins require a new experiment version.
 5. Human inspection results must come from real participants; synthetic labels are prohibited.
-

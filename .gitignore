@@ -8,5 +8,7 @@ analysis/*.json
 figures/*.png
 reports/*.html
 notebooks/.ipynb_checkpoints/
+.codex-workbook/
+reports/*.inspect.ndjson
 __pycache__/
 *.pyc

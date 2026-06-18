@@ -76,3 +76,23 @@ independent reviews. Disagreements retain both labels and an adjudication. The
 SetupLens `v0.2.0` release is prohibited until dataset validation passes, human
 comparison data exist, and the exact experiment commit is recorded.
 
+## Pilot calibration and scoring freeze
+
+I will complete full Pass A, Pass B, and Pass C review for 10 pilot repositories
+before starting confirmatory evaluation. I will exclude these repositories from
+the final confirmatory metrics and use them only to refine the protocol,
+examples, rules, and scoring design.
+
+Exploratory external tests exposed two distinct product issues. An unsupported
+primary stack can receive a misleading numeric readiness grade, and a supported
+project can receive a high score while a required dependency remains absent.
+The first issue requires an explicit `unsupported` or `not scored` state. The
+second requires stronger dependency evidence; increasing warning weights alone
+would not establish that the project can run.
+
+I will not tune weights from one or two examples. Any scoring change must be
+justified by the pilot evidence, recorded in a new experiment version, frozen
+before confirmatory scans, and evaluated on repositories that did not influence
+the change. Reviewing machine-positive findings alone is insufficient for
+recall because it cannot reveal false negatives; Pass A and Pass C remain
+mandatory for every repository included in the primary recall result.
