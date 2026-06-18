@@ -1,0 +1,12 @@
+dataset/repos/
+dataset/logs/*.log
+dataset/raw/*.json
+dataset/*.sqlite*
+dataset/annotations/workflow-review-packets/*.md
+analysis/*.csv
+analysis/*.json
+figures/*.png
+reports/*.html
+notebooks/.ipynb_checkpoints/
+__pycache__/
+*.pyc

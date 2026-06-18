@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0",
+  "scope": ["node", "python", "docker"],
+  "failureCodes": ["RT-MISSING", "RT-VERSION", "TOOL-MISSING", "TOOL-VERSION", "DEP-NOT-INSTALLED", "DEP-RESOLUTION", "DEP-LOCK-CONFLICT", "CFG-FILE-MISSING", "CFG-VAR-MISSING", "CFG-VALUE-INVALID", "AUTH-MISSING", "CMD-MISSING", "CMD-WORKDIR", "PATH-MISSING", "PATH-CASE", "WORKSPACE-LAYOUT", "SVC-UNAVAILABLE", "DATA-NOT-INITIALIZED", "NET-UNAVAILABLE", "PLATFORM-OS", "PLATFORM-PERMISSION", "NATIVE-TOOLCHAIN", "OTHER-CONFIRMED"],
+  "phases": ["preflight", "bootstrap", "dependency_install", "build_or_migrate", "startup", "health_check"],
+  "impacts": ["blocker", "degraded", "conditional", "none", "hygiene_only"],
+  "contextRoles": ["primary", "supporting", "example", "test_fixture", "documentation", "generated"],
+  "reproducibility": ["always", "environment_dependent", "intermittent", "not_reproduced"],
+  "evidenceLevels": ["E3_reproduced", "E2_deterministic", "E1_inferred", "E0_none"],
+  "findingVerdicts": ["true_positive", "false_positive", "conditional", "out_of_scope", "not_assessable"],
+  "falsePositiveReasons": ["context_role", "pattern_collision", "workspace_semantics", "optional_requirement", "environment_assumption", "duplicate", "other"]
+}
+
