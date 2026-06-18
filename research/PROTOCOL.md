@@ -1,7 +1,7 @@
 # SetupBench-Lens Confirmatory Protocol
 
-Version: 1.0  
-Decision date: 2026-06-18
+Version: 1.1
+Decision date: 2026-06-19
 
 ## Research questions
 
@@ -96,3 +96,14 @@ before confirmatory scans, and evaluated on repositories that did not influence
 the change. Reviewing machine-positive findings alone is insufficient for
 recall because it cannot reveal false negatives; Pass A and Pass C remain
 mandatory for every repository included in the primary recall result.
+
+The unsupported-stack observation, product response, exclusion decision,
+freeze gate, and C++ limitation are recorded in
+`research/PILOT_STUDY_UNSUPPORTED_STACK.md`. The external C++ example and all
+10 pilot repositories are development evidence and cannot contribute TP, FP,
+FN, precision, recall, F1, or confirmatory timing results.
+
+The confirmatory commit remains unset until the scoring correction is merged
+and all pilot checks pass. Once recorded, every holdout scan must use that exact
+commit. Any subsequent rule, weight, eligibility, or reporter change creates a
+new experiment version and requires a complete holdout rerun.

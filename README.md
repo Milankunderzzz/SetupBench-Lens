@@ -12,8 +12,9 @@ ground truth.
 ## Study state
 
 - Target sample: 50 repositories (20 Node.js, 20 Python, 10 Docker-required)
-- SetupLens candidate commit: `424a3307dffd6e1bfaf9b5caca68046f930c790c`
-- Taxonomy and annotation protocol: version 1.0
+- Exploratory machine-scan commit: `424a3307dffd6e1bfaf9b5caca68046f930c790c`
+- Confirmatory frozen commit: pending the unsupported-stack scoring correction
+- Taxonomy version: 1.0; annotation protocol: version 1.1
 - Completed machine scans: 50, containing 1,025 findings
 - Completed direct-execution probes: 2
 - Adjudicated ground-truth conditions: 0
@@ -39,6 +40,12 @@ contamination audit for repositories previously used during SetupLens rule
 development. Reviewing only SetupLens warnings and failures would estimate
 precision but not recall, so the review plan also includes independent direct
 execution and a negative-result audit.
+
+An external C++ pilot exposed a misleading `98/100 A` result when no supported
+primary stack was available. I document the observation and pre-freeze response
+in `research/PILOT_STUDY_UNSUPPORTED_STACK.md`. C++ remains outside the Node.js,
+Python, and Docker study scope, and the pilot result is excluded from final
+metrics.
 
 ## Reproduce
 
