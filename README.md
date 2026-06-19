@@ -9,11 +9,17 @@ inside disposable containers, stores redacted evidence in a local SQLite
 database, and evaluates a frozen SetupLens commit against independently reviewed
 ground truth.
 
+This repository is a study in progress. It currently demonstrates a
+reproducible protocol and an exploratory machine-scan pipeline; it does not yet
+demonstrate that SetupLens is faster, more accurate, or more useful than direct
+execution or human diagnosis.
+
 ## Study state
 
 - Target sample: 50 repositories (20 Node.js, 20 Python, 10 Docker-required)
 - Exploratory machine-scan commit: `424a3307dffd6e1bfaf9b5caca68046f930c790c`
-- Confirmatory frozen commit: pending the unsupported-stack scoring correction
+- Unsupported-stack correction merge commit: `0461ace04a1baf039412934acfed4e033dd07a9d`
+- Confirmatory frozen commit: pending completion of the 10-repository pilot and contamination audit
 - Taxonomy version: 1.0; annotation protocol: version 1.1
 - Completed machine scans: 50, containing 1,025 findings
 - Completed direct-execution probes: 2
@@ -28,8 +34,21 @@ repository summaries, all raw findings, a machine-positive review queue, 10
 pilot repositories, and a deterministic negative-audit sample. Machine output
 is not treated as ground truth or as a final paper result.
 
-I record completed checkpoints and explicit pending work in
-`research/PROGRESS_LOG.md`.
+I record completed checkpoints and explicit pending work in the
+[research progress log](research/PROGRESS_LOG.md).
+
+## Completed engineering checkpoint
+
+- SetupLens now returns `Unsupported / Not scored` for unsupported, unknown,
+  and empty repositories instead of assigning a misleading numeric grade.
+- The correction is covered by 44 automated tests and passed all six CI
+  combinations used by SetupLens.
+- Pilot evidence and confirmatory holdout evidence are explicitly separated.
+- The tool repository and benchmark repository have separate responsibilities,
+  histories, and release gates.
+
+These are engineering and protocol milestones. They are not substitutes for
+Ground Truth or final evaluation metrics.
 
 ## Pilot before confirmatory evaluation
 
@@ -46,9 +65,18 @@ execution and a negative-result audit.
 
 An external C++ pilot exposed a misleading `98/100 A` result when no supported
 primary stack was available. I document the observation and pre-freeze response
-in `research/PILOT_STUDY_UNSUPPORTED_STACK.md`. C++ remains outside the Node.js,
-Python, and Docker study scope, and the pilot result is excluded from final
-metrics.
+in the [unsupported-stack pilot record](research/PILOT_STUDY_UNSUPPORTED_STACK.md).
+C++ remains outside the Node.js, Python, and Docker study scope, and the pilot
+result is excluded from final metrics.
+
+## Next checkpoint
+
+1. Complete Pass A, Pass B, and Pass C for all 10 pilot repositories.
+2. Audit the candidate holdout set for repositories used during rule development.
+3. Validate the isolation workflow before additional third-party execution.
+4. Freeze one immutable SetupLens commit after pilot-driven changes stop.
+5. Rerun eligible holdout repositories and begin adjudicated metric calculation.
+6. Collect real external-user and blinded human-comparison evidence without synthetic labels.
 
 ## Reproduce
 
