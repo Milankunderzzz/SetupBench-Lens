@@ -28,6 +28,9 @@ repository summaries, all raw findings, a machine-positive review queue, 10
 pilot repositories, and a deterministic negative-audit sample. Machine output
 is not treated as ground truth or as a final paper result.
 
+I record completed checkpoints and explicit pending work in
+`research/PROGRESS_LOG.md`.
+
 ## Pilot before confirmatory evaluation
 
 I will fully review 10 pilot repositories before scaling the workflow. These
