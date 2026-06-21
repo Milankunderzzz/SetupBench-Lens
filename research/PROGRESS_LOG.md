@@ -1,5 +1,45 @@
 # Research Progress Log
 
+## 2026-06-21: Release synchronization checkpoint
+
+### Completed work
+
+1. I synchronized the SetupLens product roadmap with the benchmark release
+   gates without treating planned versions as completed research.
+2. I prepared SetupLens `v0.1.1` as a maintenance release candidate. Its CLI,
+   package metadata, lockfile, generated report, Action documentation, and
+   changelog identify the same candidate version.
+3. I added `research/VERSION_MATRIX.md` to map public releases, candidate
+   commits, pilot-only versions, and confirmatory versions.
+4. I retained the separation between the 10 pilot repositories and candidate
+   holdout repositories. No pilot result will enter the primary metrics.
+
+### Repository status
+
+- SetupLens PRs #4 through #7 are merged.
+- SetupLens PR #8, `Define an evidence-gated version roadmap`, is open as a
+  draft.
+- SetupLens PR #9, `Prepare the v0.1.1 maintenance release`, is open as a draft.
+- SetupBench-Lens PRs #1 through #4 are merged.
+- `v0.1.0` remains the latest public SetupLens release.
+- `v0.2.0-alpha.1` has not been tagged or published.
+- `v0.2.0` has not been tagged or published.
+
+### Pending gates
+
+- Merge the roadmap and maintenance pull requests after review and successful
+  CI, then tag the exact `v0.1.1` merge commit.
+- Complete Pass A, Pass B, and Pass C for all 10 pilot repositories.
+- Complete the contamination audit and freeze the alpha commit.
+- Rerun eligible holdout repositories from the frozen version.
+- Complete adjudicated Ground Truth, metrics, confidence intervals, direct
+  execution, and real human comparison.
+- Collect five external users, three useful external cases, one external
+  feedback record, and a 30-second demonstration before stable `v0.2.0`.
+
+The 2026-06-19 entry below remains a point-in-time record and is not rewritten
+to match later pull-request status.
+
 ## 2026-06-19: Experiment-readiness checkpoint
 
 ### Completed work

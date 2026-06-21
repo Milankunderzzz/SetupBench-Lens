@@ -75,6 +75,10 @@ All blockers, all SetupLens failures, and at least 20% of warnings require two
 independent reviews. Disagreements retain both labels and an adjudication. The
 SetupLens `v0.2.0` release is prohibited until dataset validation passes, human
 comparison data exist, and the exact experiment commit is recorded.
+The authoritative mapping between tool releases and experiment use is recorded
+in `research/VERSION_MATRIX.md`. The `v0.2.0-alpha.1` build is pilot-only and
+cannot contribute to confirmatory metrics. The stable `v0.2.0` release remains
+prohibited until every gate in that matrix is satisfied.
 
 ## Pilot calibration and scoring freeze
 

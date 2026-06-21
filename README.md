@@ -17,6 +17,10 @@ execution or human diagnosis.
 ## Study state
 
 - Target sample: 50 repositories (20 Node.js, 20 Python, 10 Docker-required)
+- Latest public SetupLens release: `v0.1.0` at `b229550b9dadcd701d791409d32737170635e400`
+- SetupLens `v0.1.1` maintenance candidate: [PR #9](https://github.com/Milankunderzzz/SetupLens/pull/9) at `491834a5da9bc568b6e7ced1a89beffa8c8e1555`
+- Pilot freeze target: `v0.2.0-alpha.1`, blocked until all 10 pilot reviews and the contamination audit are complete
+- Validated release target: `v0.2.0`, blocked until confirmatory metrics, human comparison, and external validation are complete
 - Exploratory machine-scan commit: `424a3307dffd6e1bfaf9b5caca68046f930c790c`
 - Unsupported-stack correction merge commit: `0461ace04a1baf039412934acfed4e033dd07a9d`
 - Confirmatory frozen commit: pending completion of the 10-repository pilot and contamination audit
@@ -36,6 +40,8 @@ is not treated as ground truth or as a final paper result.
 
 I record completed checkpoints and explicit pending work in the
 [research progress log](research/PROGRESS_LOG.md).
+The [tool and experiment version matrix](research/VERSION_MATRIX.md) records
+which SetupLens release may be used at each research stage.
 
 ## Completed engineering checkpoint
 
